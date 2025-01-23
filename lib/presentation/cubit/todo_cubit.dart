@@ -21,7 +21,7 @@ class TodoCubit extends Cubit<List<Todo>> {
   //  todo ekleme
   Future<void> addTodo(String text) async{
     //  yeni ve benzersiz bir id ile todo ekleme
-    final newTodo = Todo(id: DateTime.now().millisecond, text: text);
+    final newTodo = Todo(id: DateTime.now().millisecondsSinceEpoch, text: text);
 
     //  eklenen yeni todoyu repoya kaydetme
     await todoRepo.addTodo(newTodo);
